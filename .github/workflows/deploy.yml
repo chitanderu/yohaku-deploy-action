@@ -147,11 +147,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Checkout deploy repo
+        uses: actions/checkout@v4
       # - name: Download artifact
       #   uses: actions/download-artifact@v4
       #   with:
       #     name: dist
-
       - name: Restore cached Build Artifacts
         id: cache-primes-restore
         uses: actions/cache/restore@v4
