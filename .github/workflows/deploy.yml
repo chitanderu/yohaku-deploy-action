@@ -19,6 +19,7 @@ concurrency:
 env:
   HASH_FILE: build_hash
   SOURCE_REPO: innei-dev/Yohaku
+  SOURCE_REF: 6d0430c
   BUILD_COMMAND: pnpm --filter @yohaku/web build:ci
   STANDALONE_SUBPATH: standalone/apps/web
 
@@ -51,6 +52,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: innei-dev/Yohaku
+          ref: ${{ env.SOURCE_REF }}
           token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
           fetch-depth: 0
           lfs: true
@@ -88,6 +90,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ${{ env.SOURCE_REPO }}
+          ref: ${{ env.SOURCE_REF }}
           token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
           fetch-depth: 0
           lfs: true
