@@ -19,7 +19,7 @@ concurrency:
 env:
   HASH_FILE: build_hash
   SOURCE_REPO: innei-dev/Yohaku
-  SOURCE_REF:  721bb61
+  SOURCE_REF:  721bb617db0dd1571751dbdf01cc6dfe74defedf
   BUILD_COMMAND: pnpm --filter @yohaku/web build:ci
   STANDALONE_SUBPATH: standalone/apps/web
 
